@@ -3,9 +3,9 @@ const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-  'Secret Phrase',
+  'Secret Key',
   // remember to change this to your own phrase!
-  'Rinkeby API'
+  'https://rinkeby.infura.io/v3/5e48291d2c604bb2b7e1d637c0fc2dfb'
   // remember to change this to your own endpoint!
 );
 const web3 = new Web3(provider);
