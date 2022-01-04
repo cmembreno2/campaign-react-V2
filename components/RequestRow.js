@@ -26,6 +26,9 @@ class RequestRow extends Component {
     const { Row, Cell } = Table;
     const { id, request, approversCount } = this.props;
     const readyToFinalize = request.approvalCount > approversCount / 2;
+    const deadlineTimestamp = parseInt(request.deadline);
+    const millsecondsDeadLine = deadlineTimestamp*1000;
+    var date = new Date(millsecondsDeadLine).toUTCString();
 
     return (
       <Row
@@ -53,6 +56,7 @@ class RequestRow extends Component {
             </Button>
           )}
         </Cell>
+        <Cell>{date}</Cell>
       </Row>
     );
   }
