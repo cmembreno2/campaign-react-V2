@@ -31,7 +31,7 @@ class RequestRow extends Component {
     const date = new Date(millsecondsDeadLine).toUTCString();
     const dateTime = Date.now();
     //const status = dateTime < millisecondsDeadLine ? "Opened": "Expired";
-    const status = dateTime < millsecondsDeadLine ? "Opened":
+    const status = dateTime < millsecondsDeadLine && !request.complete ? "Opened":
                    dateTime > millsecondsDeadLine && !request.complete ? "Expired": 
                    request.complete ? "Success" : "N/A";
     
