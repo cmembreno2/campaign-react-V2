@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-  'type toward enforce onion runway wolf cream ladder rate enemy other magnet',
+  'Secret Phrase',
   // remember to change this to your own phrase!
   'https://rinkeby.infura.io/v3/5e48291d2c604bb2b7e1d637c0fc2dfb'
   // remember to change this to your own endpoint!

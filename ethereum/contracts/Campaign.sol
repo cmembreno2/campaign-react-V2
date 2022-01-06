@@ -69,6 +69,7 @@ contract Campaign {
 
         require(approvers[msg.sender]);
         require(!request.approvals[msg.sender]);
+        require(now < request.deadline);
 
         request.approvals[msg.sender] = true;
         request.approvalCount++;
@@ -76,7 +77,7 @@ contract Campaign {
 
     function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
-        require(now >= request.deadline);
+        require(now < request.deadline);
         require(request.approvalCount > (approversCount / 2));
         require(!request.complete);
 
